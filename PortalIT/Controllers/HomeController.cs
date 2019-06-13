@@ -12,6 +12,7 @@ namespace PortalIT.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
 
