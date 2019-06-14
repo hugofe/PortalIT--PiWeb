@@ -6,8 +6,7 @@ namespace PortalIT.Models.Domain
 {
     public class Aluno
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Usuario { get; set; }

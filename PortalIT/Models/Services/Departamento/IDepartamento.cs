@@ -11,7 +11,8 @@ namespace PortalIT.Services.Services
         void Delete(int id);
 
         Departamento List(int id);
-        Task<Departamento> ListAsync();
+
+        Departamento Update(int id);
 
         void AddCurso(Curso curso, List<Curso> cursos);
         Task<Departamento> ListAsync(int id);

@@ -1,16 +1,25 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PortalIT.Models.Domain
 {
     public class Curso
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [Key]
         public int Id { get; set; }
+
+        [Required]
         public string Nome { get; set; }
+
+        [Required]
         public string Descricao { get; set; }
-        public DateTime TempoDeDuracao { get; set; }
+
+        [Required]
+        [DataType(DataType.Duration)]
+        public DateTime? TempoDeDuracao { get; set; }
+
+        [Required]
+        public Departamento Departamento { get; set; }
     }
 }

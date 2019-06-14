@@ -6,11 +6,9 @@ namespace PortalIT.Models.Domain
 {
     public class Departamento
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+      
         public int Id { get; set; }
         public string Nome { get; set; }
-
-        List<Curso> Curso;
+        public Curso Curso { get; set; }
     }
 }
