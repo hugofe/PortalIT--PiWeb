@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using PortalIT.Models.Domain;
 
 namespace PortalIT.Controllers
 {
+    [Authorize]
     public class DepartamentoController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,7 +20,7 @@ namespace PortalIT.Controllers
         {
             _context = context;
         }
-
+       
         // GET: Departamento
         public async Task<IActionResult> Index()
         {

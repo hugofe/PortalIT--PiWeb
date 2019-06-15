@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PortalIT.Models.Domain
@@ -15,11 +16,11 @@ namespace PortalIT.Models.Domain
         [Required]
         public string Descricao { get; set; }
 
-        [Required]
-        [DataType(DataType.Duration)]
+        
+        [DataType(DataType.Time)]
         public DateTime? TempoDeDuracao { get; set; }
 
         [Required]
-        public Departamento Departamento { get; set; }
+        public List<Departamento> Departamento { get; set; }
     }
 }

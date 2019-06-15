@@ -11,10 +11,10 @@ namespace PortalIT.Services.Services
         void Delete(int id);
 
         Departamento List(int id);
+        IList<Departamento> ListAll();
 
         Departamento Update(int id);
 
-        void AddCurso(Curso curso, List<Curso> cursos);
-        Task<Departamento> ListAsync(int id);
+        void AddCurso(Curso curso);
     }
 }

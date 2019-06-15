@@ -1,4 +1,5 @@
-﻿using PortalIT.Models.Domain;
+﻿using PortalIT.Data;
+using PortalIT.Models.Domain;
 using PortalIT.Services.Services;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,17 @@ namespace PortalIT.Models.Services.Services
 {
     public class DepartamentoServices : IDepartamento
     {
-        public void AddCurso(Curso curso, List<Curso> cursos)
+        private readonly ApplicationDbContext _context;
+
+        public DepartamentoServices(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            context = _context;
+        }
+        public void AddCurso(Curso curso)
+        {
+            _context.Add(curso);
+            _context.SaveChanges();
+            
         }
 
         public void Create(Departamento departamento)
@@ -28,10 +37,9 @@ namespace PortalIT.Models.Services.Services
         {
             throw new NotImplementedException();
         }
-
-        public Task<Departamento> ListAsync(int id)
+        public IList<Departamento> ListAll()
         {
-            throw new NotImplementedException();
+            return _context.Departamento.ToList();
         }
 
         public Departamento Update(int id)

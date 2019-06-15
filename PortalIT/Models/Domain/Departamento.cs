@@ -10,5 +10,6 @@ namespace PortalIT.Models.Domain
         public int Id { get; set; }
         public string Nome { get; set; }
         public Curso Curso { get; set; }
+
     }
 }
